@@ -1,0 +1,121 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java
+{
+	"name": "Java springboot example",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none",
+			"installMaven": "false",
+			"installGradle": "true"
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "java -version",
+
+// Configure tool-specific properties.
+"customizations": {
+	// Configure properties specific to VS Code.
+	"vscode": {
+		// Set *default* container specific settings.json values on container create.
+		"settings": {
+			"editor.formatOnSave": true,
+			"files.autoSave": "afterDelay",
+			"editor.formatOnPaste": true,
+			"editor.fontSize": 16,
+			"terminal.integrated.fontSize": 14,
+			"workbench.iconTheme": "material-icon-theme",
+			"workbench.colorTheme": "GitHub Dark",
+			// to do tree settings
+			"todo-tree.highlights.defaultHighlight": {
+				"icon": "alert",
+				"type": "text-and-comment",
+				"foreground": "#ffffff",
+				// "background": "#808080",
+				"opacity": 70,
+				"iconColour": "#0000FF",
+				"gutterIcon": true
+			},
+			"todo-tree.highlights.customHighlight": {
+				"TODO": {
+					"icon": "tools",
+					// "foreground": "#000000",
+					// "background": "#FFFFFF",
+					"iconColour": "#FFFFFF"
+				},
+				"NOTE": {
+					"icon": "note",
+					"foreground": "#e404f8",
+					// "background": "#808080",
+					"iconColour": "#e404f8"
+				},
+				"QUESTION": {
+					"icon": "question",
+					"foreground": "#FFFF00",
+					// "background": "#FFFF00",
+					"iconColour": "#FFFF00"
+				},
+				"FIXME": {
+					"foreground": "#000000",
+					"background": "#FFFF00",
+					"iconColour": "#FFFF00"
+				},
+				"BUG": {
+					"foreground": "#000000",
+					"background": "#FF0000",
+					"iconColour": "#FF0000"
+				},
+				"DEBUG": {
+					"foreground": "#FFFF00",
+					// "background": "#FF0000",
+					"iconColour": "#FFFF00"
+				},
+				"SOLVED": {
+					"icon": "check",
+					"foreground": "#FFFFFF",
+					"background": "#00FF00",
+					"iconColour": "#00FF00"
+				}
+			},
+			"todo-tree.general.tags": [
+				"TODO",
+				"NOTE",
+				"QUESTION",
+				"FIXME",
+				"BUG",
+				"DEBUG",
+				"SOLVED"
+			],
+			"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS).*(\\n\\s*//\\s{2,}.*)*",
+			"todo-tree.tree.autoRefresh": true,
+			"indentRainbow.ignoreErrorLanguages": [
+				"markdown",
+				"python",
+				"cpp",
+				"java"
+			]
+		},
+		// Add the IDs of extensions you want installed when the container is created.
+		"extensions": [
+			"oderwat.indent-rainbow",
+			"gruntfuggly.todo-tree",
+			"pkief.material-icon-theme",
+			"qwtel.sqlite-viewer",
+			"streetsidesoftware.code-spell-checker",
+			"github.github-vscode-theme",
+			"ms-azuretools.vscode-docker",
+			"vscjava.vscode-java-pack",
+			"vscjava.vscode-spring-initializr"
+		]
+	}
+}
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
